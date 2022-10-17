@@ -3,3 +3,5 @@
 卒業研究
 
 アホ
+
+quality of life
