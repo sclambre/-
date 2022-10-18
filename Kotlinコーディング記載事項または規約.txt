@@ -1,3 +1,5 @@
+// 1.必須kotlinコード
+
 // viewBinding要素を追加( build.gradle(モジュール: プロジェクト.app)へ )
 buildFeatures {
     viewBinding = true
@@ -14,15 +16,32 @@ setContentView(R.layout.activity_main)
 val view = binding.root
 setContentView(view)
 
-// 基礎コード
+// 2.基礎構文
+/* 2-1.変数・定数の定義 */
 val 定数名: 型 //固定値
 var 変数名: 型 //変数値
 /* 型は "必ず明記" すること */
 
-// sample code
-// 1. buttonをclickした時の動作
+/* 2-2.配列の定義 */
+val arrayOfInt: Array<Int> = arrayOf(1,2,3,5,8)
+( 配列名: Array<型> = arrayOf(要素) )
+/* 型は "必ず明記" すること */
+
+/* 2-3.if条件式 */
+変数 = if(条件式){
+    (true)
+} else {
+    (false)
+}
+/* 括弧の開始は "条件式と同じ行" から開始すること */
+
+/* 2-4.when条件式 */
+
+
+// 3.sample code
+/* 3-1. buttonをclickした時の動作 */
 binding./* buttonのID */.setOnClickListener {
     binding.textView.text = /* "変更後の文字列" */
 }
 
-// 2. 
+/* 2. */
