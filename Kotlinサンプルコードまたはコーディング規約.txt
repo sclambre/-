@@ -1,3 +1,24 @@
+/************************************************************************/
+【目次】
+1.必須kotlinコード
+2.基礎構文
+    2-1.変数・定数の定義
+    2-2.配列の定義
+    2-3.if条件式
+    2-4.when条件式
+        2-4-1.when-boolean
+    2-5.for繰り返し
+        2-5-1.配列の要素を全て出力
+        2-5-2.配列の添字(index)を利用する
+        2-5-3.範囲式を利用する
+        2-5-4.範囲式を利用する(downTo)
+        2-5-5.範囲式を利用する(step)
+
+3.sample code
+    3-1.buttonをclickした時の動作
+
+/************************************************************************/
+
 // 1.必須kotlinコード
 
 // viewBinding要素を追加( build.gradle(モジュール: プロジェクト.app)へ )
@@ -11,37 +32,104 @@ private lateinit var binding: ActivityMainBinding
 // onCreate句の中に
 binding = ActivityMainBinding.inflate(layoutInflater)
 
+// 変更行
 setContentView(R.layout.activity_main)
 // 下に変更
 val view = binding.root
 setContentView(view)
 
+
+
 // 2.基礎構文
+
 /* 2-1.変数・定数の定義 */
 val 定数名: 型 //固定値
 var 変数名: 型 //変数値
+
 /* 型は "必ず明記" すること */
+
 
 /* 2-2.配列の定義 */
 val arrayOfInt: Array<Int> = arrayOf(1,2,3,5,8)
 ( 配列名: Array<型> = arrayOf(要素) )
+
 /* 型は "必ず明記" すること */
+
 
 /* 2-3.if条件式 */
 変数 = if(条件式){
-    (true)
+    (trueのとき)
 } else {
-    (false)
+    (falseのとき)
 }
+
 /* 括弧の開始は "条件式と同じ行" から開始すること */
 
+
 /* 2-4.when条件式 */
+when (条件式){
+    値1 -> 処理
+    値2 -> 処理
+    ...
+    else -> 処理
+}
+
+/* 2-4-1.when-boolean */
+when (条件式){
+    booleanを返す式 -> 処理
+    booleanを返す式 -> 処理
+    ...
+    else -> 処理
+}
+
+
+/* 2-5.for繰り返し */
+for (変数 in iteratable object){
+    処理
+}
+
+/* 2-5-1.配列の要素を全て出力 */
+val array = arrayOf(1,2,3,10,100,1000) 
+for (a in array){
+    print($a)
+}
+--------------------------------------
+result:1,2,3,10,100,1000
+
+/* 2-5-2.配列の添字(index)を利用する */
+val a = arrayOf(1,2,3,10,100,1000)
+for (i in a.indices) {
+    print("a[$i]=${a[i]} ")
+}
+--------------------------------------
+result:a[0]=1 a[1]=2 a[2]=3 a[3]=10 a[4]=100 a[5]=1000
+
+/* 2-5-3.範囲式を利用する */
+for (i in 1..4)
+print(i)
+--------------
+result:1234
+
+/* 2-5-4.範囲式を利用する(downTo) */
+for (i in 4 downTo 1)
+print(i)
+---------------------
+result:4321
+
+/* 2-5-5.範囲式を利用する(step) */
+for (i in 0..9 step 2)
+print(i)
+----------------------
+result:02468
+
 
 
 // 3.sample code
+
 /* 3-1. buttonをclickした時の動作 */
 binding./* buttonのID */.setOnClickListener {
     binding.textView.text = /* "変更後の文字列" */
 }
+
 
 /* 2. */
