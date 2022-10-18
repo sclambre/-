@@ -15,7 +15,16 @@
         2-5-5.範囲式を利用する(step)
     2-6.while繰り返し
         2-6-1.do-while繰り返し
-        
+    2-7.List,Set,Mapについて
+        2-7-1.List
+            2-7-1-1.listOf関数
+            2-7-1-2.mutableListOf関数
+        2-7-2.Set
+            2-7-2-1.setOf関数
+            2-7-2-2.mutableSetOf関数
+        2-7-3.Map
+            2-7-3-1.mapOf関数
+            2-7-3-2.mutableMapOf関数
 3.sample code
     3-1.buttonをclickした時の動作
 
@@ -136,6 +145,65 @@ do{
 }while (条件式)
 
 /* 必ず1度処理が実行される */
+
+
+/* 2-7.List,Set,Mapについて */
+List:要素の順番を保持 要素の重複可
+Set:要素の順番保持しない 要素の重複不可
+Map:キーと値が対になった要素を保持 キーの重複不可
+
+/* 2-7-1.List */
+//読み取り専用リストの生成
+listOf(値1,値2,値3,…,値n)
+//変更可能なリストの生成
+mutableListOf(値1,値2,値3,…,値n)
+
+/* 2-7-1-1.listOf関数 */
+val items(←リスト名): List<String(←型)> = listOf("First","Second","Third")
+println(items.get(0)) (result:First)
+println(items[1]) (result:Second)
+println(items.size) (result:3)
+
+/* 2-7-1-2.mutableListOf関数 */
+val numbers: MutableList<Int> = mutableListOf(2,4,6)
+println(numbers) (result:[2, 4, 6])
+numbers.add(4)
+println(numbers) (result:[2, 4, 6, 4])
+numbers.remove(4)
+println(numbers) (result:[2, 6, 4])
+
+/* 2-7-2.Set */
+//読み取り専用セットの生成
+setOf(値1,値2,値3,…,値n)
+//変更可能なセットの生成
+mutableSetOf(値1,値2,値3,…,値n)
+
+/* 2-7-2-1.setOf関数 */
+var strings: Set<String> = setOf("A","B","C")
+println(strings) (result:[A, B, C])
+
+/* 2-7-2-2.mutableSetOf関数 */
+var strings: MutableSet<String> = mutableSetOf("x","y","z")
+strings.add("A")
+println(strings) (result:[x, y, z, A])
+strings.remove("x")
+println(strings) (result:[y, z, A])
+strings.add("y")
+println(strings) (result:[y, z, A])
+
+/* 2-7-3.Map */
+//読み取り専用マップの生成
+mapOf(キー1 to 値1,キー2 to 値2,…,キーn to 値n)
+//変更可能なマップの生成
+mutableMapOf(キー1 to 値1,キー2 to 値2,…,キーn to 値n)
+
+/* 2-7-3-1.mapOf関数 */
+val fruits: Map<String,Int> = mapOf("apple" to 1, "orange" to 2, "banana" to 3)
+print(fruits)
+-------------------------------------------------------------------------------
+result:{apple=1, orange=2, banana=3}
+
+/* 2-7-3-2.mutableMapOf関数 */
 
 
 
