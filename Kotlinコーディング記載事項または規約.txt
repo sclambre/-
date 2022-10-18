@@ -1,0 +1,28 @@
+// viewBinding要素を追加( build.gradle(モジュール: プロジェクト.app)へ )
+buildFeatures {
+    viewBinding = true
+}
+
+// viewBindingの設定
+private lateinit var binding: ActivityMainBinding
+
+// onCreate句の中に
+binding = ActivityMainBinding.inflate(layoutInflater)
+
+setContentView(R.layout.activity_main)
+// 下に変更
+val view = binding.root
+setContentView(view)
+
+// 基礎コード
+val 定数名: 型 //固定値
+var 変数名: 型 //変数値
+/* 型は "必ず明記" すること */
+
+// sample code
+// 1. buttonをclickした時の動作
+binding./* buttonのID */.setOnClickListener {
+    binding.textView.text = /* "変更後の文字列" */
+}
+
+// 2. 
