@@ -25,9 +25,10 @@
         2-7-3.Map
             2-7-3-1.mapOf関数
             2-7-3-2.mutableMapOf関数
+    2-8.自作関数
 3.sample code
     3-1.buttonをclickした時の動作
-
+4.コーディング規約
 /************************************************************************/
 
 // 1.必須kotlinコード
@@ -204,6 +205,27 @@ print(fruits)
 result:{apple=1, orange=2, banana=3}
 
 /* 2-7-3-2.mutableMapOf関数 */
+val fruits: MutableMap<String,Int> = mutableMapOf("apple" to 1, "orange" to 2, "banana" to 3)
+print(fruits.get("apple")) (result:1)
+print(fruits["orange"]) (result:2)
+
+fruits.put("melon",4)
+print(fruits)
+---------------------
+result:{apple=1, orange=2, banana=3, melon=4}
+
+fruits.remove("banana")
+print(fruits)
+-----------------------
+{apple=1, orange=2, melon=4}
+
+
+/* 2-8.自作関数 */
+fun 関数名(引数1: 型, 引数2: 型,・・・) : 戻り値{
+    処理
+}
+
+/* 戻り値なしの場合、戻り値は "Unit"
 
 
 
@@ -215,4 +237,19 @@ binding./* buttonのID */.setOnClickListener {
 }
 
 
-/* 2. */
+/* 3-2. */
+
+
+
+/* 4.コーディング規約 */
+・キャメルケースの使用
+例: textView
+
+・型は大文字で開始
+例: Int, String
+
+・メソッドとプロパティは小文字で開始
+
+・Unitについて
+関数がUnitを返す場合、戻り値の型は省略します。
+その他の型は型推論を利用せず明示すること。
