@@ -253,3 +253,6 @@ binding./* buttonのID */.setOnClickListener {
 ・Unitについて
 関数がUnitを返す場合、戻り値の型は省略します。
 その他の型は型推論を利用せず明示すること。
+
+・プロジェクト名について
+SotsukenAppProjectとする。
